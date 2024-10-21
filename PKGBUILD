@@ -3,8 +3,9 @@
 # Maintainer: Truocolo <truocolo@aol.com>
 # Maintainer: Pellegrino Prevete <pellegrinoprevete@gmail.com>
 
-pkgname="aspe"
-pkgver=1.1.1.1
+pkgname=aspe
+pkgver=1.1.1.1.1
+_commit="f0a8ef9f107432ada77e679cb91518921660dad8"
 pkgrel=1
 pkgdesc="Arch Linux build source file clone tool"
 arch=(
@@ -27,11 +28,18 @@ checkdepends=(
   shellcheck
 )
 _url="file://${HOME}/${pkgname}"
+if [[ "${_git}" == "false" ]]; then
+  _src="${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
+  _sum="60ba3ffbc185a1c720878ad5f13eb7eefb6bd1e7fb02cf36c26e4e824daac350"
+elif [[ "${_git}" == "true" ]]; then
+  _src="${pkgname}-${pkgver}::git+${url}#_commit=${_commit}"
+  _sum="60ba3ffbc185a1c720878ad5f13eb7eefb6bd1e7fb02cf36c26e4e824daac350"
+fi
 source=(
-  "${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
+  "${_src}"
 )
 sha256sums=(
-  "60ba3ffbc185a1c720878ad5f13eb7eefb6bd1e7fb02cf36c26e4e824daac350"
+  "${_sum}"
 )
 
 package() {
