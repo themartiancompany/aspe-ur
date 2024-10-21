@@ -3,6 +3,7 @@
 # Maintainer: Truocolo <truocolo@aol.com>
 # Maintainer: Pellegrino Prevete <pellegrinoprevete@gmail.com>
 
+_git="false"
 pkgname=aspe
 pkgver=1.1.1.1.1
 _commit="f0a8ef9f107432ada77e679cb91518921660dad8"
