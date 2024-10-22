@@ -13,3 +13,18 @@ pkgbase = aspe
 	sha256sums = 60ba3ffbc185a1c720878ad5f13eb7eefb6bd1e7fb02cf36c26e4e824daac350
 
 pkgname = aspe
+pkgbase = aspe
+	pkgdesc = Arch Linux build source file clone tool
+	pkgver = 1.1.1.1.1
+	pkgrel = 1
+	url = https://github.com/themartiancompany/aspe
+	arch = any
+	license = AGPL3
+	checkdepends = shellcheck
+	makedepends = make
+	depends = bash
+	depends = curl
+	source = aspe-1.1.1.1.1.tar.gz::https://github.com/themartiancompany/aspe/archive/refs/tags/1.1.1.1.1.tar.gz
+	sha256sums = edae5fc3c4f75660a4d6eabf4b83f3c523598233a1185005de9dc2781bc15bdf
+
+pkgname = aspe

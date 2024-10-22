@@ -31,7 +31,7 @@ checkdepends=(
 _url="file://${HOME}/${pkgname}"
 if [[ "${_git}" == "false" ]]; then
   _src="${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
-  _sum="60ba3ffbc185a1c720878ad5f13eb7eefb6bd1e7fb02cf36c26e4e824daac350"
+  _sum="edae5fc3c4f75660a4d6eabf4b83f3c523598233a1185005de9dc2781bc15bdf"
 elif [[ "${_git}" == "true" ]]; then
   _src="${pkgname}-${pkgver}::git+${url}#_commit=${_commit}"
   _sum="60ba3ffbc185a1c720878ad5f13eb7eefb6bd1e7fb02cf36c26e4e824daac350"
