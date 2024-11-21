@@ -19,8 +19,9 @@ license=(
   AGPL3
 )
 depends=(
-  bash
-  curl
+  'bash'
+  'curl'
+  'libcrash-bash'
 )
 makedepends=(
   'make'
