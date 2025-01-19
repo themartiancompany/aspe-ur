@@ -4,38 +4,53 @@
 # Maintainer: Pellegrino Prevete <pellegrinoprevete@gmail.com>
 
 _git="false"
+_proj="hip"
 pkgname=aspe
-pkgver=1.1.1.1.1
-_commit="f0a8ef9f107432ada77e679cb91518921660dad8"
+pkgver=1.1.1.1.1.1.1
+_commit="5f509e13ccd0cc61de71a6b9f52bbe6018f12a08"
 pkgrel=1
-pkgdesc="Arch Linux build source file clone tool"
+_pkgdesc=(
+  "Build recipes retrieval"
+  "tool."
+)
+pkgdesc="${_pkgdesc[*]}"
 arch=(
-  any
+  'any'
 )
 _host='https://github.com'
 _ns='themartiancompany'
 url="${_host}/${_ns}/${pkgname}"
 license=(
-  AGPL3
+  'AGPL3'
 )
 depends=(
-  'bash'
-  'curl'
+  'evm-contracts-tools'
+  'evm-wallet'
+  'evmfs'
   'libcrash-bash'
+  'libevm'
+  'ur-contracts'
+  'ur'
 )
 makedepends=(
   'make'
 )
 checkdepends=(
-  shellcheck
+  'shellcheck'
+)
+optdepends=(
+  'git: to download sources from censorable sources.'
+)
+group=(
+  "${_proj}"
 )
 _url="file://${HOME}/${pkgname}"
 if [[ "${_git}" == "false" ]]; then
   _src="${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
-  _sum="edae5fc3c4f75660a4d6eabf4b83f3c523598233a1185005de9dc2781bc15bdf"
+  _sum='3be1df805d609534963e9d1e7d2ce1a3922a4d02a1dd41c2d364eeff86769802'
 elif [[ "${_git}" == "true" ]]; then
   _src="${pkgname}-${pkgver}::git+${url}#_commit=${_commit}"
-  _sum="60ba3ffbc185a1c720878ad5f13eb7eefb6bd1e7fb02cf36c26e4e824daac350"
+  _sum='3be1df805d609534963e9d1e7d2ce1a3922a4d02a1dd41c2d364eeff86769802'
 fi
 source=(
   "${_src}"
