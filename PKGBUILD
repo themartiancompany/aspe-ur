@@ -72,9 +72,8 @@ elif [[ "${_git}" == "true" ]]; then
   _sum='3be1df805d609534963e9d1e7d2ce1a3922a4d02a1dd41c2d364eeff86769802'
 fi
 if [[ "${_offline}" == "true" ]]; then
-_url="file://${HOME}/${pkgname}"
+  _url="file://${HOME}/${pkgname}"
 fi
-
 source=(
   "${_src}"
 )
