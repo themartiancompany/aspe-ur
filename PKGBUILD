@@ -22,6 +22,7 @@
 # Maintainer: Truocolo <truocolo@aol.com>
 # Maintainer: Pellegrino Prevete <pellegrinoprevete@gmail.com>
 
+_offline="false"
 _git="false"
 _proj="hip"
 pkgname=aspe
@@ -63,7 +64,6 @@ optdepends=(
 group=(
   "${_proj}"
 )
-_url="file://${HOME}/${pkgname}"
 if [[ "${_git}" == "false" ]]; then
   _src="${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
   _sum='3be1df805d609534963e9d1e7d2ce1a3922a4d02a1dd41c2d364eeff86769802'
@@ -71,6 +71,10 @@ elif [[ "${_git}" == "true" ]]; then
   _src="${pkgname}-${pkgver}::git+${url}#_commit=${_commit}"
   _sum='3be1df805d609534963e9d1e7d2ce1a3922a4d02a1dd41c2d364eeff86769802'
 fi
+if [[ "${_offline}" == "true" ]]; then
+_url="file://${HOME}/${pkgname}"
+fi
+
 source=(
   "${_src}"
 )
